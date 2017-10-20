@@ -1,0 +1,38 @@
+#include "stdafx.h"
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main() {
+
+	double h, a, b, d, result = 0, adder, n = 0;
+
+
+	cout << "enter h: ";
+	cin >> h;
+	cout << "enter a: ";
+	cin >> a;
+	cout << "enter b: ";
+	cin >> b;
+	cout << "enter d: ";
+	cin >> d;
+
+	for (double j = a; j <= b; j += h) {
+		n = result = adder = 0; //обнуляємо результати та лічильник
+
+
+		do {
+			n++;
+			adder = pow(j - 1, n) / n*pow(j, n);// приклад
+			result += adder;
+
+		} while (abs(adder) > d); //перевіряєм доданок на похибку
+		cout << "x: " << j << " y: " << result << "  " << adder << endl; //виводими результат
+
+
+	}
+
+	system("pause");
+	return 0;
+}
